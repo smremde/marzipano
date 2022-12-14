@@ -24,12 +24,14 @@ module.exports = {
   WebGlCubeRenderer: require('./renderers/WebGlCube'),
   WebGlFlatRenderer: require('./renderers/WebGlFlat'),
   WebGlEquirectRenderer: require('./renderers/WebGlEquirect'),
+  WebGlEquirectTiledRenderer: require('./renderers/WebGlEquirectTile'),
   registerDefaultRenderers: require('./renderers/registerDefaultRenderers'),
 
   // Geometries.
   CubeGeometry: require('./geometries/Cube'),
   FlatGeometry: require('./geometries/Flat'),
   EquirectGeometry: require('./geometries/Equirect'),
+  EquirectTileGeometry: require('./geometries/EquirectTile'),
 
   // Views.
   RectilinearView: require('./views/Rectilinear'),

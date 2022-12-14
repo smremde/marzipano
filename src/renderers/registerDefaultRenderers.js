@@ -18,6 +18,7 @@
 var WebGlCube = require('./WebGlCube');
 var WebGlFlat = require('./WebGlFlat');
 var WebGlEquirect = require('./WebGlEquirect');
+var WebGlEquirectTile = require('./WebGlEquirectTile');
 
 /**
  * Registers all known renderers for the given stage type into that stage.
@@ -33,6 +34,7 @@ function registerDefaultRenderers(stage) {
       stage.registerRenderer('flat', 'flat', WebGlFlat);
       stage.registerRenderer('cube', 'rectilinear', WebGlCube);
       stage.registerRenderer('equirect', 'rectilinear', WebGlEquirect);
+      stage.registerRenderer('equirecttiled', 'rectilinear', WebGlEquirectTile);
       break;
     default:
       throw new Error('Unknown stage type: ' + stage.type);
