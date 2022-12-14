@@ -397,16 +397,11 @@ EquirectTileGeometry.prototype.visibleTiles = function (view, level, result) {
     }
 
     var startingTile = this._closestTile(view, level);
-    console.log(startingTile)
     var count = tileSearcher.search(view, startingTile, result);
     if (!count) {
-        console.log(startingTile)
-        console.log(view);
-        console.log(startingTile.vertices())
         throw new Error('Starting tile is not visible');
     }
-     //result.length=0;
-   //  result[0]=startingTile;
+    
     return result;
 }
 

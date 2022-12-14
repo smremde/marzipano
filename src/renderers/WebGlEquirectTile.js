@@ -103,20 +103,6 @@ WebGlEquirectTileRenderer.prototype.startLayer = function(layer, rect) {
 
   gl.uniformMatrix4fv(shaderProgram.uInvProjMatrix, false, invProjMatrix);
 
-  // Compute and set the texture scale and crop offsets.
-  /*
-  var textureCrop = layer.effects().textureCrop || {};
-  var textureX = textureCrop.x != null ? textureCrop.x : 0;
-  var textureY = textureCrop.y != null ? textureCrop.y : 0;
-  var textureWidth = textureCrop.width != null ? textureCrop.width : 1;
-  var textureHeight = textureCrop.height != null ? textureCrop.height : 1;
-
-  gl.uniform1f(shaderProgram.uTextureX, textureX);
-  gl.uniform1f(shaderProgram.uTextureY, textureY);
-  gl.uniform1f(shaderProgram.uTextureWidth, textureWidth);
-  gl.uniform1f(shaderProgram.uTextureHeight, textureHeight);
-*/
-
   setupPixelEffectUniforms(gl, layer.effects(), {
     opacity: shaderProgram.uOpacity,
     colorOffset: shaderProgram.uColorOffset,
