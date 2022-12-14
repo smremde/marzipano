@@ -43,7 +43,7 @@ module.exports = [
 '  float t = 1.0 - phi / PI;',
 
 '  s = (s - uSphereX) * uSphereWidth;',
-'  t = (t - uSphereY) * uSphereHeight;',
+'  t = (t - (1.0-uSphereY - 1.0/uSphereHeight)) * uSphereHeight ;',
 '  if (s < 0.0 || s > 1.0 || t < 0.0 || t > 1.0) {',
 '    discard;',
 '  } else {',

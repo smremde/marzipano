@@ -26,7 +26,7 @@ var tileUrl = function(tile) {
     console.log(tile,tile.minX(),tile.minY(),tile.scaleX(),tile.scaleY(),tile.width(), tile.height())
   return urlPrefix
   .replace('{cleft}', tile.minX() * 8192)
-  .replace('{ctop}', (1-tile.minY()-tile.scaleY())*4096)
+  .replace('{ctop}', tile.minY()*4096)
   .replace('{cwidth}', tile.scaleX()*8192)
   .replace('{cheight}', tile.scaleY()*4096)
   .replace('{width}', tile.width())

@@ -178,8 +178,8 @@ EquirectTile.prototype.vertices = function (result) {
 
     var left = -(this.minX()) * Math.PI * 2;
     var right = left - this.scaleX() * Math.PI * 2;
-    var bottom =-(this.minY() - 0.5) * Math.PI;
-    var top = bottom - this.scaleY() * Math.PI;
+    var bottom =(this.minY() - 0.5) * Math.PI;
+    var top = bottom + this.scaleY() * Math.PI;
 
     makeVertex(result[3], left, bottom);
     makeVertex(result[2], right, bottom);
@@ -416,7 +416,7 @@ EquirectTileGeometry.prototype._closestTile = function (view, level) {
 
     // Compute the image coordinates that the view ray points into.
     var x =  view.yaw()  / (2 * Math.PI)  + 0.5;
-    var y =  -view.pitch() / Math.PI + 0.5
+    var y =  view.pitch() / Math.PI + 0.5
 
     // Get the desired zoom level.
     var tileZ = this.levelList.indexOf(level);
